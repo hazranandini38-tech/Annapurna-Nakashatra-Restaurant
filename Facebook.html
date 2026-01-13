@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook - Annapurna Nakashtra</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff8f0;
+            color: #2a0f0f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            background-color: #2a0f0f;
+            color: #ffd700;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .social-icon {
+            font-size: 80px;
+            color: #E1306C;
+        }
+
+        a.button {
+            display: inline-block;
+            background-color: #1877F2;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: box-shadow 0.4s ease, transform 0.3s ease;
+        }
+
+        a.button:hover {
+            box-shadow: 0 0 15px 5px #1877F2;
+            transform: scale(1.05);
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li a {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 80px;
+            font-size: 35px;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #fff;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        ul li a:hover {
+            transform: scale(1.15);
+        }
+
+        ul li a .icon {
+            position: relative;
+            color: #262626;
+            transition: 0.5s;
+            z-index: 3;
+        }
+
+        ul li a:hover .icon {
+            color: #fff;
+            transform: rotateY(360deg);
+        }
+
+        ul li a:before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        ul li a:hover:before {
+            top: 0;
+        }
+
+        ul li:nth-child(1) a:before {
+            background: #3b5999;
+        }
+
+        ul li:nth-child(2) a:before {
+            background: #55acee;
+        }
+
+        ul li:nth-child(3) a:before {
+            background: #d62976;
+        }
+
+        ul li:nth-child(4) a:before {
+            background: #dd2b13;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 28px;
+            }
+
+            .social-icon {
+                font-size: 60px;
+            }
+
+            ul {
+                gap: 15px;
+            }
+
+            ul li a {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+                line-height: 60px;
+            }
+
+            a.button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2a0f0f;
+            padding: 0 20px;
+            height: 120px;
+            font-size: 25px;
+        }
+
+        .logo img {
+            height: 150px;
+            margin-bottom: -26px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            position: relative;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu>.menu-item>a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #2a0f0f;
+            border: 1px solid #ffd700;
+            z-index: 999;
+            min-width: 180px;
+            flex-direction: column;
+        }
+
+        .dropdown a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .dropdown a:hover {
+            background-color: #3a1f1f;
+        }
+
+        .dropdown.show {
+            display: flex;
+        }
+
+        /* Optional: Close dropdowns on small screens after selection */
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        .social-icon1 {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" onclick="toggleMenu()"></div>
+
+        <div class="logo">
+            <img src="./logo (1).png" alt="Annapurna Nakashtra">
+        </div>
+        <nav class="menu">
+            <div class="menu-item">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">About Us</a>
+                <div class="dropdown">
+                    <a href="Our Mission.html">Our Mission</a>
+                    <a href="Why Choose Us.html">Why Choose Us</a>
+                    <a href="Chef's Story.html">Chef's Story</a>
+                    <a href="Customer Reviews.html">Customer Reviews</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Menu</a>
+                <div class="dropdown">
+                    <a href="Vegetarian.html">Vegetarian</a>
+                    <a href="Non-Vegetarian.html">Non-Vegetarian</a>
+                    <a href="Desserts.html">Desserts</a>
+                    <a href="Beverages.html">Beverages</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Gallery</a>
+                <div class="dropdown">
+                    <a href="Events.html">Events</a>
+                    <a href="Ambience.html">Ambience</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Reservations</a>
+                <div class="dropdown">
+                    <a href="reservation.html">Book a Table</a>
+                    <a href="Private Dining.html">Private Dining</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Events</a>
+                <div class="dropdown">
+                    <a href="Live Music.html">Live Music</a>
+                    <a href="Festive Offers.html">Festive Offers</a>
+                    <a href="Birthday Parties.html">Birthday Parties</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Contact Us</a>
+                <div class="dropdown">
+                    <a href="Our Location.html">Our Location</a>
+                    <a href="Call Us.html">Call Us</a>
+                    <a href="Send Email.html">Send Email</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Follow Us</a>
+                <div class="dropdown">
+                    <a href="Instagram.html">Instagram</a>
+                    <a href="Facebook.html">Facebook</a>
+                    <a href="Twitter.html">Twitter</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br><br>
+    <section class="social-icon1">
+        <div class="social-icon">👍</div>
+        <h2>Connect with Us on Facebook</h2>
+        <p>Stay up to date with events, offers, and customer reviews. Like and follow our page!</p>
+        <a href="https://facebook.com/yourusername" target="_blank" class="button">Visit Facebook</a>
+    </section>
+    <section>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="fab fa-facebook-f icon"></i> </a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-twitter icon"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-instagram icon"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-google-plus-g icon"></i></a>
+            </li>
+        </ul>
+    </section>
+    <script>
+        function toggleDropdown(clickedElement) {
+            // Close any open dropdowns first
+            document.querySelectorAll(".dropdown").forEach(drop => {
+                if (drop !== clickedElement.nextElementSibling) {
+                    drop.classList.remove("show");
+                }
+            });
+
+            // Toggle the dropdown connected to this item
+            const dropdown = clickedElement.nextElementSibling;
+            dropdown.classList.toggle("show");
+        }
+
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.menu-item')) {
+                document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('show'));
+            }
+        });
+        function toggleMenu() {
+            const menu = document.querySelector(".menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+
+
+    <footer align="center">
+        © 2025 Annapurna Nakashtra Restaurant. All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>

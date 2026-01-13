@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Annapurna Nakashtra Restaurant - Upcoming Events and Special Offers">
+    <meta name="keywords" content="restaurant events, live music, seasonal offers, private dining">
+    <meta name="author" content="Annapurna Nakashtra Team">
+    <title>Events - Annapurna Nakashtra Restaurant</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        /* Event Sections */
+        .event-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-section h2 {
+            text-align: center;
+            color: #2a0f0f;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .event-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .event-card .card {
+            background-color: #fff;
+            width: 48%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .event-card .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .event-card .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .event-card .card .content {
+            padding: 15px;
+        }
+
+        .event-card .card .content h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #2a0f0f;
+        }
+
+        .event-card .card .content p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .event-card .card .content .date {
+            font-size: 14px;
+            color: #ffd700;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .event-card .card {
+                width: 100%;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2a0f0f;
+            padding: 0 20px;
+            height: 120px;
+            font-size: 25px;
+        }
+
+        .logo img {
+            height: 150px;
+            margin-bottom: -26px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            position: relative;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu>.menu-item>a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #2a0f0f;
+            border: 1px solid #ffd700;
+            z-index: 999;
+            min-width: 180px;
+            flex-direction: column;
+        }
+
+        .dropdown a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .dropdown a:hover {
+            background-color: #3a1f1f;
+        }
+
+        .dropdown.show {
+            display: flex;
+        }
+
+        /* Optional: Close dropdowns on small screens after selection */
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" onclick="toggleMenu()"></div>
+
+        <div class="logo">
+            <img src="./logo (1).png" alt="Annapurna Nakashtra">
+        </div>
+        <nav class="menu">
+            <div class="menu-item">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">About Us</a>
+                <div class="dropdown">
+                    <a href="Our Mission.html">Our Mission</a>
+                    <a href="Why Choose Us.html">Why Choose Us</a>
+                    <a href="Chef's Story.html">Chef's Story</a>
+                    <a href="Customer Reviews.html">Customer Reviews</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Menu</a>
+                <div class="dropdown">
+                    <a href="Vegetarian.html">Vegetarian</a>
+                    <a href="Non-Vegetarian.html">Non-Vegetarian</a>
+                    <a href="Desserts.html">Desserts</a>
+                    <a href="Beverages.html">Beverages</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Gallery</a>
+                <div class="dropdown">
+                    <a href="Events.html">Events</a>
+                    <a href="Ambience.html">Ambience</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Reservations</a>
+                <div class="dropdown">
+                    <a href="reservation.html">Book a Table</a>
+                    <a href="Private Dining.html">Private Dining</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Events</a>
+                <div class="dropdown">
+                    <a href="Live Music.html">Live Music</a>
+                    <a href="Festive Offers.html">Festive Offers</a>
+                    <a href="Birthday Parties.html">Birthday Parties</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Contact Us</a>
+                <div class="dropdown">
+                    <a href="Our Location.html">Our Location</a>
+                    <a href="Call Us.html">Call Us</a>
+                    <a href="Send Email.html">Send Email</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Follow Us</a>
+                <div class="dropdown">
+                    <a href="Instagram.html">Instagram</a>
+                    <a href="Facebook.html">Facebook</a>
+                    <a href="Twitter.html">Twitter</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br><br>
+
+
+    <h1 align="center" style="color:#2a0f0f;">Upcoming Events at Annapurna Nakashtra</h1>
+
+
+    <section class="event-section" data-aos="fade-up">
+        <h2>Live Music Nights</h2>
+        <div class="event-card">
+            <div class="card">
+                <img src="music.jpg" alt="Live Music Night 1">
+                <div class="content">
+                    <h3>Jazz & Blues Evening</h3>
+                    <p>Enjoy soulful jazz and blues performances by renowned artists.</p>
+                    <p class="date">July 15, 2025 | 7:00 PM</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Acoustic Vibes.jpg" alt="Live Music Night 2">
+                <div class="content">
+                    <h3>Acoustic Vibes</h3>
+                    <p>Relax with acoustic renditions of classic hits.</p>
+                    <p class="date">August 5, 2025 | 8:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="event-section" data-aos="fade-up">
+        <h2>Seasonal Offers</h2>
+        <div class="event-card">
+            <div class="card">
+                <img src="Mokai-Menu.jpg" alt="Seasonal Offer 1">
+                <div class="content">
+                    <h3>Summer Special Menu</h3>
+                    <p>Indulge in our refreshing summer dishes and beverages.</p>
+                    <p class="date">June 20 - July 20, 2025</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="monsoon_menu.jpg" alt="Seasonal Offer 2">
+                <div class="content">
+                    <h3>Monsoon Delights</h3>
+                    <p>Warm up with our monsoon-exclusive comfort foods.</p>
+                    <p class="date">August 1 - August 31, 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="event-section" data-aos="fade-up">
+        <h2>Private Dining Experiences</h2>
+        <div class="event-card">
+            <div class="card">
+                <img src="Romantic Candlelight Dinner.jpg" alt="Private Dining 1">
+                <div class="content">
+                    <h3>Romantic Candlelight Dinner</h3>
+                    <p>Experience an intimate dining setup for two.</p>
+                    <p class="date">Available on Request</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Best-Family.jpg" alt="Private Dining 2">
+                <div class="content">
+                    <h3>Family Celebration Package</h3>
+                    <p>Celebrate special occasions with your loved ones in a private setting.</p>
+                    <p class="date">Available on Request</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        function toggleDropdown(clickedElement) {
+            // Close any open dropdowns first
+            document.querySelectorAll(".dropdown").forEach(drop => {
+                if (drop !== clickedElement.nextElementSibling) {
+                    drop.classList.remove("show");
+                }
+            });
+
+            // Toggle the dropdown connected to this item
+            const dropdown = clickedElement.nextElementSibling;
+            dropdown.classList.toggle("show");
+        }
+
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.menu-item')) {
+                document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('show'));
+            }
+        });
+        function toggleMenu() {
+            const menu = document.querySelector(".menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+
+</body>
+
+</html>
