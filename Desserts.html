@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts – Annapurna Nakshatra Restaurant</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8f0;
+            color: #3e2c1c;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .dessert-section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .dessert-card {
+            display: flex;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .dessert-card img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .dessert-info {
+            padding: 20px;
+        }
+
+        .dessert-info h2 {
+            margin: 0 0 10px;
+            font-size: 1.6rem;
+            color: #3B1918;
+        }
+
+        .dessert-info p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .dessert-card:hover img {
+            transform: scale(1.1);
+            /* Zoom effect */
+            filter: brightness(1.1);
+            /* Slightly brighten */
+        }
+
+        footer {
+            background: #3B1918;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .dessert-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .dessert-card img {
+                width: 100%;
+            }
+        }
+
+        .hover-underline {
+            font-size: 2rem;
+            color: gold;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hover-underline::after,
+        .hover-underline::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #4b0707, #e2cc07);
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease-out;
+        }
+
+        .hover-underline::before {
+            top: -5px;
+            transform-origin: left;
+        }
+
+        .hover-underline:hover::after,
+        .hover-underline:hover::before {
+            transform: scaleX(1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2a0f0f;
+            padding: 0 20px;
+            height: 120px;
+            font-size: 25px;
+        }
+
+        .logo img {
+            height: 150px;
+            margin-bottom: -26px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            position: relative;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu>.menu-item>a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #2a0f0f;
+            border: 1px solid #ffd700;
+            z-index: 999;
+            min-width: 180px;
+            flex-direction: column;
+        }
+
+        .dropdown a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .dropdown a:hover {
+            background-color: #3a1f1f;
+        }
+
+        .dropdown.show {
+            display: flex;
+        }
+
+        /* Optional: Close dropdowns on small screens after selection */
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" onclick="toggleMenu()"></div>
+
+        <div class="logo">
+            <img src="./logo (1).png" alt="Annapurna Nakashtra">
+        </div>
+        <nav class="menu">
+            <div class="menu-item">
+                <a href="Home.html">Home</a>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">About Us</a>
+                <div class="dropdown">
+                    <a href="Our Mission.html">Our Mission</a>
+                    <a href="Why Choose Us.html">Why Choose Us</a>
+                    <a href="Chef's Story.html">Chef's Story</a>
+                    <a href="Customer Reviews.html">Customer Reviews</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Menu</a>
+                <div class="dropdown">
+                    <a href="Vegetarian.html">Vegetarian</a>
+                    <a href="Non-Vegetarian.html">Non-Vegetarian</a>
+                    <a href="Desserts.html">Desserts</a>
+                    <a href="Beverages.html">Beverages</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Gallery</a>
+                <div class="dropdown">
+                    <a href="Events.html">Events</a>
+                    <a href="Ambience.html">Ambience</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Reservations</a>
+                <div class="dropdown">
+                    <a href="reservation.html">Book a Table</a>
+                    <a href="Private Dining.html">Private Dining</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Events</a>
+                <div class="dropdown">
+                    <a href="Live Music.html">Live Music</a>
+                    <a href="Festive Offers.html">Festive Offers</a>
+                    <a href="Birthday Parties.html">Birthday Parties</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Contact Us</a>
+                <div class="dropdown">
+                    <a href="Our Location.html">Our Location</a>
+                    <a href="Call Us.html">Call Us</a>
+                    <a href="Send Email.html">Send Email</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Follow Us</a>
+                <div class="dropdown">
+                    <a href="Instagram.html">Instagram</a>
+                    <a href="Facebook.html">Facebook</a>
+                    <a href="Twitter.html">Twitter</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br><br>
+
+    <div class="hero">
+        Sweet Moments Begin Here 🍨
+    </div>
+
+    <section class="dessert-section">
+        <div class="dessert-card">
+            <img src="gulabjamun.jpg" alt="Gulab Jamun">
+            <div class="dessert-info">
+                <h2 class="hover-underline">Gulab Jamun</h2>
+                <p>Soft, juicy milk-solid dumplings soaked in fragrant sugar syrup – a royal treat after every meal!</p>
+            </div>
+        </div>
+
+        <div class="dessert-card">
+            <img src="matka kulfi.jpg" alt="Kulfi">
+            <div class="dessert-info">
+                <h2 class="hover-underline">Matka Kulfi</h2>
+                <p>Traditional frozen delight made with condensed milk, cardamom & nuts. Served in a clay pot for an
+                    earthy taste.</p>
+            </div>
+        </div>
+
+        <div class="dessert-card">
+            <img src="rasgulla.jpg" alt="Rasgulla">
+            <div class="dessert-info">
+                <h2 class="hover-underline">Rasgulla</h2>
+                <p>Spongy white balls made from fresh paneer soaked in light sugar syrup. A Bengali favorite!</p>
+            </div>
+        </div>
+        <div class="dessert-card">
+            <img src="Rasmalai.jpg" alt="Rasmalai">
+            <div class="dessert-info">
+                <h2 class="hover-underline">Rasmalai</h2>
+                <p>It is a popular Indian dessert known for its soft, spongy texture and rich, creamy flavor.</p>
+            </div>
+        </div>
+        <div class="dessert-card">
+            <img src="Shrikhand.jpg" alt="Shrikhand">
+            <div class="dessert-info">
+                <h2 class="hover-underline">Shrikhand</h2>
+                <p>It is a rich, creamy, delicious, and easy Indian dessert recipe made from thick yogurt (or Greek
+                    yogurt), sugar, flavored
+                    with saffron, and ground cardamom.</p>
+            </div>
+        </div>
+        <div class="dessert-card">
+            <img src="misti doi.jpg" alt="Mishti Doi">
+            <div class="dessert-info">
+                <h2 class="hover-underline">Mishti Doi</h2>
+                <p>Mishti doi is a traditional Bengali sweetened yogurt dessert. It's made by fermenting milk and adding
+                    sugar or jaggery.
+                    It's known for its creamy, smooth texture and sweet, tangy flavor.</p>
+            </div>
+        </div>
+    </section>
+    <script>
+        function toggleDropdown(clickedElement) {
+            // Close any open dropdowns first
+            document.querySelectorAll(".dropdown").forEach(drop => {
+                if (drop !== clickedElement.nextElementSibling) {
+                    drop.classList.remove("show");
+                }
+            });
+
+            // Toggle the dropdown connected to this item
+            const dropdown = clickedElement.nextElementSibling;
+            dropdown.classList.toggle("show");
+        }
+
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.menu-item')) {
+                document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('show'));
+            }
+        });
+        function toggleMenu() {
+            const menu = document.querySelector(".menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+
+    <footer>
+        &copy; 2025 Annapurna Nakshatra Restaurant | All Rights Reserved
+    </footer>
+
+</body>
+
+</html>
