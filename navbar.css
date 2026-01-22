@@ -70,7 +70,7 @@
 .hamburger {
     display: none;
     font-size: 32px;
-    color: #ffd700;
+    color: #cb9849;
     cursor: pointer;
 }
 
@@ -100,4 +100,5 @@
         position: static;
         border: none;
     }
+
 }
