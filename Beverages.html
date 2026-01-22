@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beverages – Annapurna Nakashtra</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<style>
+    body {
+
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #fff8f0;
+        color: #3e2c1c;
+
+    }
+
+
+    .beverage-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .beverage-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 40px 20px;
+    }
+
+    .beverage-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .beverage-card:hover {
+        transform: scale(1.03);
+    }
+
+    .beverage-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .beverage-card .info {
+        padding: 15px;
+    }
+
+    .beverage-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.3em;
+        color: #3a1f1f;
+    }
+
+    .beverage-card p {
+        margin: 0;
+        font-size: 0.95em;
+    }
+
+    /* ... keep your existing styles ... */
+
+    .beverage-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.3em;
+        color: #3a1f1f;
+        position: relative;
+        transition: all 0.4s ease;
+    }
+
+    .beverage-card h3:hover {
+        color: rgb(172, 189, 25);
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    footer {
+        background: #3B1918;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+
+        <div class="logo">
+            <img src="./logo (1).png" alt="Annapurna Nakashtra">
+        </div>
+        <nav class="menu">
+            <div class="menu-item">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">About Us</a>
+                <div class="dropdown">
+                    <a href="Our Mission.html">Our Mission</a>
+                    <a href="Why Choose Us.html">Why Choose Us</a>
+                    <a href="Chef's Story.html">Chef's Story</a>
+                    <a href="Customer Reviews.html">Customer Reviews</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Menu</a>
+                <div class="dropdown">
+                    <a href="Vegetarian.html">Vegetarian</a>
+                    <a href="Non-Vegetarian.html">Non-Vegetarian</a>
+                    <a href="Desserts.html">Desserts</a>
+                    <a href="Beverages.html">Beverages</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Gallery</a>
+                <div class="dropdown">
+                    <a href="Events.html">Events</a>
+                    <a href="Ambience.html">Ambience</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Reservations</a>
+                <div class="dropdown">
+                    <a href="reservation.html">Book a Table</a>
+                    <a href="Private Dining.html">Private Dining</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Events</a>
+                <div class="dropdown">
+                    <a href="Live Music.html">Live Music</a>
+                    <a href="Festive Offers.html">Festive Offers</a>
+                    <a href="Birthday Parties.html">Birthday Parties</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Contact Us</a>
+                <div class="dropdown">
+                    <a href="Our Location.html">Our Location</a>
+                    <a href="Call Us.html">Call Us</a>
+                    <a href="Send Email.html">Send Email</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Follow Us</a>
+                <div class="dropdown">
+                    <a href="Instagram.html">Instagram</a>
+                    <a href="Facebook.html">Facebook</a>
+                    <a href="Twitter.html">Twitter</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br><br>
+
+    <section class="beverage-section">
+        <div class="beverage-card" data-aos="fade-up">
+            <img src="./masala chai.jpg" alt="Masala Chai" />
+            <div class="info">
+                <h3>Masala Chai</h3>
+                <p>Traditional spiced tea brewed with herbs and milk.</p>
+            </div>
+        </div>
+
+        <div class="beverage-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="./Sweet-Lassi.jpg" alt="Sweet Lassi" />
+            <div class="info">
+                <h3>Sweet Lassi</h3>
+                <p>Refreshing Punjabi yogurt drink, lightly sweetened.</p>
+            </div>
+        </div>
+
+        <div class="beverage-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="./Aam Panna.jpg" alt="Aam Panna" />
+            <div class="info">
+                <h3>Aam Panna</h3>
+                <p>Green mango cooler with mint and spices – perfect for summer.</p>
+            </div>
+        </div>
+
+        <div class="beverage-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="./nimbu pani.jpg" alt="Nimbu Pani" />
+            <div class="info">
+                <h3>Nimbu Pani</h3>
+                <p>Lemonade infused with black salt, cumin, and mint.</p>
+            </div>
+        </div>
+
+        <div class="beverage-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="./Badam-Milk.jpg" alt="Badam Milk" />
+            <div class="info">
+                <h3>Badam Milk</h3>
+                <p>Almond-rich warm milk with saffron and cardamom essence.</p>
+            </div>
+        </div>
+        <div class="beverage-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="./coffee.jpg" alt="Coffee" />
+            <div class="info">
+                <h3>Coffee</h3>
+                <p>Coffee is a globally popular beverage brewed from the roasted and ground seeds of the coffee
+                    plant.
+                </p>
+            </div>
+        </div>
+        <div class="beverage-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="./Rose-Falooda.jpg" alt="Rose Falooda" />
+            <div class="info">
+                <h3>Rose Falooda</h3>
+                <p>Rose falooda is a summer treat with rose flavored milk, nuts, vermicelli, ice cream and sabja
+                    seeds
+                    to cool your senses.
+                </p>
+            </div>
+        </div>
+        <div class="beverage-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="./kokum.jpg" alt="kokum" />
+            <div class="info">
+                <h3>Kokum Sharbat</h3>
+                <p>Kokum Sharbat is a refreshing, tangy, summer cooler traditionally made in India to combat the
+                    relentless heat and sun.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="script.js"></script> <!--NAVBAR FOR MOBILE JS FUNCTIONS  -->
+
+    <footer>
+        &copy; 2025 Annapurna Nakshatra Restaurant | All Rights Reserved
+    </footer>
+
+</body>
+
+</html>

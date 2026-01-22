@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Us - Annapurna Nakashtra</title>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #fff8f0;
+            color: #2a0f0f;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2a0f0f;
+            color: #ffd700;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        a.call-button {
+            display: inline-block;
+            background-color: #2a0f0f;
+            color: #ffd700;
+            padding: 14px 28px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a.call-button:hover {
+            background-color: #3a1f1f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="logo">
+            <img src="./logo (1).png" alt="Annapurna Nakashtra">
+        </div>
+        <nav class="menu">
+            <div class="menu-item">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">About Us</a>
+                <div class="dropdown">
+                    <a href="Our Mission.html">Our Mission</a>
+                    <a href="Why Choose Us.html">Why Choose Us</a>
+                    <a href="Chef's Story.html">Chef's Story</a>
+                    <a href="Customer Reviews.html">Customer Reviews</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Menu</a>
+                <div class="dropdown">
+                    <a href="Vegetarian.html">Vegetarian</a>
+                    <a href="Non-Vegetarian.html">Non-Vegetarian</a>
+                    <a href="Desserts.html">Desserts</a>
+                    <a href="Beverages.html">Beverages</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Gallery</a>
+                <div class="dropdown">
+                    <a href="Events.html">Events</a>
+                    <a href="Ambience.html">Ambience</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Reservations</a>
+                <div class="dropdown">
+                    <a href="reservation.html">Book a Table</a>
+                    <a href="Private Dining.html">Private Dining</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Events</a>
+                <div class="dropdown">
+                    <a href="Live Music.html">Live Music</a>
+                    <a href="Festive Offers.html">Festive Offers</a>
+                    <a href="Birthday Parties.html">Birthday Parties</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Contact Us</a>
+                <div class="dropdown">
+                    <a href="Our Location.html">Our Location</a>
+                    <a href="Call Us.html">Call Us</a>
+                    <a href="Send Email.html">Send Email</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleDropdown(this)">Follow Us</a>
+                <div class="dropdown">
+                    <a href="Instagram.html">Instagram</a>
+                    <a href="Facebook.html">Facebook</a>
+                    <a href="Twitter.html">Twitter</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br><br>
+    <section>
+        <h2>Call Us</h2>
+        <p>Have a question or want to make a quick reservation? Call us now!</p>
+        <a href="tel:+911234567890" class="call-button">📞 +91 12345 67890</a>
+    </section>
+
+    <script src="script.js" ></script> <!--NAVBAR FOR MOBILE JS FUNCTIONS  -->
+
+    <footer>
+        © 2025 Annapurna Nakashtra Restaurant. All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>
