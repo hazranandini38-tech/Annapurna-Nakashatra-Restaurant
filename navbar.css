@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-text-align: left;
+    text-align: left;
     background-color: #2a0f0f;
     padding: 0 20px;
     height: 120px;
@@ -27,7 +27,7 @@ text-align: left;
 }
 
 .menu>.menu-item>a {
-    color: #ffd700;
+    color: #cb9849;
     text-decoration: none;
     padding: 10px;
     display: block;
@@ -45,14 +45,14 @@ text-align: left;
     top: 100%;
     left: 0;
     background-color: #2a0f0f;
-    border: 1px solid #ffd700;
+    border: 1px solid #cb9849;
     z-index: 999;
     min-width: 180px;
     flex-direction: column;
 }
 
 .dropdown a {
-    color: #ffd700;
+    color: #cb9849;
     text-decoration: none;
     padding: 8px 12px;
     font-size: 16px;
